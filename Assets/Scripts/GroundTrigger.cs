@@ -22,16 +22,31 @@ public class GroundTrigger : MonoBehaviour
         
     }
 
-    public GameObject obstaclePrefab;
-
+    public GameObject obstaclePrefab;// 3 different prefabs
+    public GameObject obstaclePrefab1;
+    public GameObject obstaclePrefab2;
+     
     void SpawnObstacles ()
     {
+        int randNum = Random.Range(0, 4);//random number generated between 1 and 4 
         //random point for spawning obstacle
         int obstecleSpawnIndex = Random.Range(2, 5);//randomizes between children
         Transform spawnPoint = transform.GetChild(obstecleSpawnIndex).transform;//this gets the childs transform from unity
-
-        //spwan obstacle
-        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity/*keeps it from rotating*/, transform );
+        if (randNum == 1)
+        {
+            //spwan obstacle
+            Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity/*keeps it from rotating*/, transform);
+        }
+        else if (randNum == 2)
+        {
+            //spwan obstacle
+            Instantiate(obstaclePrefab1, spawnPoint.position, Quaternion.identity, transform);
+        }
+        else if (randNum == 3)
+        {
+            //spwan obstacle
+            Instantiate(obstaclePrefab2, spawnPoint.position, Quaternion.identity, transform);
+        }
     }
 
     public GameObject powerUpPrefab;//variable to store power ups

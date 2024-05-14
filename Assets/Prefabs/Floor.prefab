@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5125408520921526048}
-  - component: {fileID: 5009076761574180565}
   - component: {fileID: 8086599482016890593}
   - component: {fileID: 5353361281788513247}
   m_Layer: 0
@@ -101,20 +100,6 @@ Transform:
   - {fileID: 1256332011378826605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5009076761574180565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4591229051890666444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92066959fa7096c46a988d7e8fe943d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 0}
-  powerUpPrefab: {fileID: 0}
 --- !u!65 &8086599482016890593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -148,7 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92066959fa7096c46a988d7e8fe943d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 7765025305986064102, guid: 3b678a759762065468ec206526ea03fb, type: 3}
+  obstaclePrefab: {fileID: 1000013801879364, guid: 8eb71e495ef8c4c1faab07597ab6b62c, type: 3}
+  obstaclePrefab1: {fileID: 1000012043944216, guid: f3eba945ea540419eb267052f0613ee1, type: 3}
+  obstaclePrefab2: {fileID: 1000011761766408, guid: 9397f0cbf7e014656b3e94f3719bd044, type: 3}
   powerUpPrefab: {fileID: 8757605703256251530, guid: 4101721a42ccf954f9da2c44dd60b5c4, type: 3}
 --- !u!1 &6256880381952655428
 GameObject:
@@ -274,7 +261,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c176bbb7be831242a18504a506c6869, type: 2}
+  - {fileID: 2100000, guid: 52792a2fc10ea8b41a775424014f8823, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
