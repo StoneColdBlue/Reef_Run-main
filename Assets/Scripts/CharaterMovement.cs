@@ -13,7 +13,9 @@ public class CharacterMovement : MonoBehaviour
     public float horizontalMulti = 2; // this increses the speed
 
     float verticalInput; // a variable to store the vertical input
-    public float verticalMulti = 2;//this was a multiplyer but it couses the charater to jump to high
+    public float verticalMulti = 1;//this was a multiplyer but it couses the charater to jump to high
+    float multi = 0.1f * Time.deltaTime;
+    bool jump = Input.GetKey(KeyCode.Space);
 
     private void FixedUpdate()
     {
@@ -21,8 +23,12 @@ public class CharacterMovement : MonoBehaviour
 
         Vector3 forwardMove = transform.forward * pace * Time.fixedDeltaTime; //this makes the player move forward continuesly
         Vector3 horizontalMove = transform.right * horizontalInput * pace * Time.fixedDeltaTime * horizontalMulti;//recives horizontal inputs
-        Vector3 verticalMove = transform.up * verticalInput * pace * Time.fixedDeltaTime * verticalMulti;//recives vertical inputs
-        rb.MovePosition(rb.position + forwardMove + horizontalMove + verticalMove);//compiles all inputs to the charater
+        rb.MovePosition(rb.position + forwardMove + horizontalMove);//compiles all inputs to the charater
+        verticalMulti = rb.velocity.magnitude;
+        if (jump == true)
+        {
+            Vector3 verticalMove = transform.up * verticalInput * pace * Time.fixedDeltaTime * verticalMulti;//recives vertical inputs
+        }
     }
     // Update is called once per frame
     void Update()

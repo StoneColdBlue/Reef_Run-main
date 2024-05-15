@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class PointsManager : MonoBehaviour
 {
@@ -28,6 +28,14 @@ public class PointsManager : MonoBehaviour
         instan = this;
     }
 
+    void triggBoss()
+    {
+        if (score == 50)
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +47,6 @@ public class PointsManager : MonoBehaviour
     void Update()
     {
         PlayerPrefs.SetInt("ScoreSave", score);
+        triggBoss();
     }
 }
